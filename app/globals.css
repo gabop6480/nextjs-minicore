@@ -1,0 +1,115 @@
+:root {
+  --bg: #edf0f4;
+  --surface: #ffffff;
+  --ink: #16202e;
+  --muted: #5b6778;
+  --line: #d5dbe3;
+  --accent: #0e6b66;
+  --accent-ink: #ffffff;
+  --danger: #b42318;
+  --danger-bg: #fdecea;
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2, h3 { margin: 0; line-height: 1.25; }
+
+a { color: var(--accent); }
+
+:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 55%, white); outline-offset: 2px; }
+
+/* ---------- Formularios ---------- */
+.field { display: grid; gap: 0.35rem; margin-bottom: 1rem; }
+.field label { font-size: 0.9rem; font-weight: 600; }
+
+.input, .textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.input:focus, .textarea:focus { border-color: var(--accent); }
+.textarea { min-height: 5rem; resize: vertical; }
+
+/* ---------- Botones ---------- */
+.btn {
+  padding: 0.55rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--muted); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn-primary { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+.btn-primary:hover { border-color: var(--accent); filter: brightness(1.1); }
+
+.btn-danger { color: var(--danger); }
+.btn-danger:hover { border-color: var(--danger); }
+
+.btn-small { padding: 0.3rem 0.7rem; font-size: 0.875rem; }
+
+.alert {
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.85rem;
+  color: var(--danger);
+  background: var(--danger-bg);
+  border: 1px solid color-mix(in srgb, var(--danger) 30%, white);
+  border-radius: var(--radius);
+  font-size: 0.925rem;
+}
+
+/* ---------- Pantalla ---------- */
+.container { max-width: 56rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; display: grid; gap: 1.25rem; }
+.page-title { font-size: 1.6rem; }
+.lead { margin: 0.4rem 0 0; color: var(--muted); max-width: 42rem; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.25rem; }
+.panel h2 { font-size: 1.05rem; margin-bottom: 1rem; }
+.form-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem; }
+.form-grid .field, .filters .field { margin-bottom: 0; }
+.filters { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; }
+.filters .input { min-width: 11rem; }
+
+.notice {
+  margin: 0; padding: 0.65rem 0.85rem; border-radius: var(--radius); font-size: 0.925rem;
+  color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, white);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, white);
+}
+
+/* ---------- Resumen ---------- */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 0.75rem; }
+.stat { display: grid; gap: 0.15rem; padding: 0.9rem 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.stat-label { color: var(--muted); font-size: 0.875rem; }
+.stat-value { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stat-value.accent { color: var(--accent); }
+
+/* ---------- Tablas ---------- */
+.table-wrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.table th, .table td { padding: 0.65rem 0.75rem; text-align: left; border-bottom: 1px solid var(--line); }
+.table th { color: var(--muted); font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+.table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.table tfoot td { font-weight: 700; border-bottom: 0; border-top: 2px solid var(--ink); }
+.commission { color: var(--accent); font-weight: 700; }
+
+.empty { margin: 0; color: var(--muted); }
