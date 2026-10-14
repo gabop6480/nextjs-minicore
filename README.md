@@ -1,5 +1,9 @@
 # MiniCore · Comisiones de ventas (Next.js + MongoDB, MVC)
 
+Video: https://youtu.be/73bw5RXomqw
+Github: https://github.com/gabop6480/nextjs-minicore
+Deploy: https://nextjs-minicore.vercel.app/
+
 Mini proyecto de una sola pantalla que filtra ventas por rango de fechas y calcula la comisión de cada vendedor.
 
 ## Cómo se calcula
