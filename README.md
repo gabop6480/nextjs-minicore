@@ -1,8 +1,6 @@
 # MiniCore · Comisiones de ventas (Next.js + MongoDB, MVC)
 
-Réplica en Next.js y MongoDB del ejercicio "MiniCore" (versiones en Flask y Tornado):
-una sola pantalla que filtra ventas por rango de fechas y calcula la comisión de cada vendedor.
-Igual que el sistema de referencia, **no tiene login**.
+Mini proyecto de una sola pantalla que filtra ventas por rango de fechas y calcula la comisión de cada vendedor.
 
 ## Cómo se calcula
 
@@ -31,29 +29,5 @@ Reglas de ejemplo: desde $500 → 6 %, $600 → 8 %, $800 → 10 %, $1,000 → 1
 | Rutas (capa delgada) | `app/api/**/route.ts` |
 | Lógica pura | `lib/comisiones.ts` (regla y cálculo), `lib/fechas.ts` (rango de fechas) |
 
-## API
 
-| Método | Ruta | Descripción |
-|---|---|---|
-| GET | `/api/comisiones?fecha_inicio=AAAA-MM-DD&fecha_fin=AAAA-MM-DD` | Comisiones por vendedor |
-| GET | `/api/ventas?fecha_inicio=...&fecha_fin=...` | Ventas del rango |
-| POST | `/api/ventas` | Agregar venta `{ vendedorId, fecha, monto }` |
-| GET | `/api/vendedores` | Listar vendedores |
-| GET | `/api/reglas` | Listar reglas |
-| POST | `/api/datos/cargar` | Cargar el ejemplo (solo si la base está vacía) |
 
-## Puesta en marcha
-
-```bash
-npm install
-cp .env.example .env.local     # y pega tu MONGODB_URI
-npm run dev
-```
-
-Abre `http://localhost:3000` y pulsa **Cargar datos de ejemplo**.
-
-## Cambiar las reglas
-
-Como en el sistema original (que las edita en `data.sql`), las reglas no tienen pantalla de edición.
-Para cambiarlas, modifica la lista `REGLAS` en `controllers/datosController.ts`, o edita la colección
-`reglas` directamente en MongoDB Atlas.
